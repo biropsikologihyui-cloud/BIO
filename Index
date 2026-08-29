@@ -21,7 +21,7 @@
 
   <!-- NOTIFICATION BANNER -->
   <div class="bg-blue-600/90 text-white text-center py-2 px-4 text-xs font-medium sticky top-0 z-50 shadow-md">
-    🚀 <strong>Formulir CPMI Online:</strong> Masukkan URL Google Apps Script Anda di kanan atas untuk langsung mengirim data ke Google Sheets.
+    🚀 <strong>Formulir CPMI Online:</strong> Silakan lengkapi seluruh data diri Anda dengan benar dan jujur.
   </div>
 
   <!-- HEADER -->
@@ -35,11 +35,6 @@
           <h1 class="text-base font-bold text-white leading-tight">FORMULIR PENDAFTARAN & BIODATA CPMI</h1>
           <p class="text-xs text-slate-400">Silakan lengkapi data diri Anda dengan benar dan jujur</p>
         </div>
-      </div>
-      <!-- GS URL CONFIGURATOR -->
-      <div class="w-full sm:w-auto flex items-center gap-2 bg-slate-900/90 p-2 rounded-xl border border-slate-700">
-        <span class="text-[11px] text-slate-400 whitespace-nowrap">URL GS:</span>
-        <input type="text" id="gsUrlInput" placeholder="https://script.google.com/macros/s/.../exec" class="bg-slate-800 text-xs px-2 py-1 rounded text-slate-200 w-full sm:w-56 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-blue-500">
       </div>
     </div>
   </header>
@@ -278,7 +273,7 @@
               <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Olahraga</label>
               <p class="text-[11px] text-slate-400">Tambah olahraga yang dikuasai/diikuti</p>
             </div>
-            <button type="button" onclick="addDynamicRow('olahragaContainer', 'olahraga-row', ['Jenis Olahraga', 'Frekuensi / Status', '-', '-'])" class="px-3 py-1.5 bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 text-xs font-bold rounded-lg border border-blue-500/40 transition-all cursor-pointer flex items-center gap-1">
+            <button type="button" onclick="addSimpleRow('olahragaContainer', 'olahraga-row', 'Jenis Olahraga', 'Frekuensi / Status')" class="px-3 py-1.5 bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 text-xs font-bold rounded-lg border border-blue-500/40 transition-all cursor-pointer flex items-center gap-1">
               + Tambah Olahraga
             </button>
           </div>
@@ -286,8 +281,6 @@
             <div class="olahraga-row grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center">
               <input type="text" placeholder="Jenis Olahraga" class="col-span-1 sm:col-span-6 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-1" required>
               <input type="text" placeholder="Frekuensi / Status" class="col-span-1 sm:col-span-5 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-2" required>
-              <input type="hidden" class="row-col-3" value="-">
-              <input type="hidden" class="row-col-4" value="-">
               <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
             </div>
           </div>
@@ -301,7 +294,7 @@
               <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Kesenian</label>
               <p class="text-[11px] text-slate-400">Tambah bidang kesenian yang dikuasai</p>
             </div>
-            <button type="button" onclick="addDynamicRow('kesenianContainer', 'kesenian-row', ['Jenis Kesenian', 'Frekuensi / Status', '-', '-'])" class="px-3 py-1.5 bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 text-xs font-bold rounded-lg border border-blue-500/40 transition-all cursor-pointer flex items-center gap-1">
+            <button type="button" onclick="addSimpleRow('kesenianContainer', 'kesenian-row', 'Jenis Kesenian', 'Frekuensi / Status')" class="px-3 py-1.5 bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 text-xs font-bold rounded-lg border border-blue-500/40 transition-all cursor-pointer flex items-center gap-1">
               + Tambah Kesenian
             </button>
           </div>
@@ -309,8 +302,6 @@
             <div class="kesenian-row grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center">
               <input type="text" placeholder="Jenis Kesenian" class="col-span-1 sm:col-span-6 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-1" required>
               <input type="text" placeholder="Frekuensi / Status" class="col-span-1 sm:col-span-5 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-2" required>
-              <input type="hidden" class="row-col-3" value="-">
-              <input type="hidden" class="row-col-4" value="-">
               <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
             </div>
           </div>
@@ -408,8 +399,13 @@
     <p>&copy; 2026 Psychology Evaluation Platform &bull; CPMI Online Engine</p>
   </footer>
 
+  <!-- JAVASCRIPT LENGKAP -->
   <script>
-    // FUNGSI DINAMIS BARIS PENDIDIKAN
+    // ==========================================
+    // MASUKKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
+    // ==========================================
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyHIwQsp0aIJseR5clCyFHpeL60Iwd6i3is7GdGANoW_PSihZonDe_3P5CkdlKvZ0U7/exec";
+
     function addPendidikanRow() {
       const container = document.getElementById('pendidikanContainer');
       const row = document.createElement('div');
@@ -425,7 +421,20 @@
       container.appendChild(row);
     }
 
-    // FUNGSI DINAMIS UMUM (KURSUS, KERJA, ORGANISASI)
+    function addKeluargaRow() {
+      const container = document.getElementById('keluargaContainer');
+      const row = document.createElement('div');
+      row.className = "keluarga-row grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center";
+      row.innerHTML = `
+        <input type="text" placeholder="Nama Lengkap" class="col-span-1 sm:col-span-4 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-name" required>
+        <input type="number" placeholder="Umur" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-age" required>
+        <input type="text" placeholder="Hubungan (Ayah/Ibu/Anak)" class="col-span-1 sm:col-span-3 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-relation" required>
+        <input type="text" placeholder="Pekerjaan" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-job" required>
+        <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
+      `;
+      container.appendChild(row);
+    }
+
     function addDynamicRow(containerId, rowClass, placeholders) {
       const container = document.getElementById(containerId);
       const row = document.createElement('div');
@@ -440,40 +449,121 @@
       container.appendChild(row);
     }
 
-    // FUNGSI DINAMIS BARIS KELUARGA
-    function addKeluargaRow() {
-      const container = document.getElementById('keluargaContainer');
+    function addSimpleRow(containerId, rowClass, p1, p2) {
+      const container = document.getElementById(containerId);
       const row = document.createElement('div');
-      row.className = "keluarga-row grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center";
+      row.className = `${rowClass} grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center`;
       row.innerHTML = `
-        <input type="text" placeholder="Nama Lengkap" class="col-span-1 sm:col-span-4 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-name" required>
-        <input type="number" placeholder="Umur" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-age" required>
-        <input type="text" placeholder="Hubungan" class="col-span-1 sm:col-span-3 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-relation" required>
-        <input type="text" placeholder="Pekerjaan" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-job" required>
+        <input type="text" placeholder="${p1}" class="col-span-1 sm:col-span-6 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-1" required>
+        <input type="text" placeholder="${p2}" class="col-span-1 sm:col-span-5 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-2" required>
         <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
       `;
       container.appendChild(row);
     }
 
     function removeRow(btn) {
-      const row = btn.parentElement;
+      const row = btn.closest('div');
       if (row.parentElement.children.length > 1) {
         row.remove();
       } else {
-        showModal("Perhatian", "Minimal harus menyisakan 1 baris.", false);
+        alert('Minimal harus ada 1 baris.');
       }
     }
 
-    function showModal(title, message, isSuccess = true) {
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalMessage').innerText = message;
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      if (!SCRIPT_URL || SCRIPT_URL.includes("...")) {
+        showModal('Konfigurasi Belum Selesai', 'Silakan masukkan URL Google Apps Script Anda ke dalam variabel SCRIPT_URL di dalam script kode HTML.', false);
+        return;
+      }
+
+      // Serialize dynamic rows
+      let pendArr = [];
+      document.querySelectorAll('.pendidikan-row').forEach(r => {
+        pendArr.push(`${r.querySelector('.school-name').value} (${r.querySelector('.school-major').value}, ${r.querySelector('.school-location').value}, ${r.querySelector('.school-period').value} - ${r.querySelector('.school-ket').value})`);
+      });
+      document.getElementById('riwayat_pendidikan').value = pendArr.join(' | ');
+
+      let kursusArr = [];
+      document.querySelectorAll('.kursus-row').forEach(r => {
+        kursusArr.push(`${r.querySelector('.row-col-1').value} - ${r.querySelector('.row-col-2').value} (${r.querySelector('.row-col-3').value}, ${r.querySelector('.row-col-4').value})`);
+      });
+      document.getElementById('kursus').value = kursusArr.join(' | ');
+
+      let kerjaArr = [];
+      document.querySelectorAll('.kerja-row').forEach(r => {
+        kerjaArr.push(`${r.querySelector('.row-col-1').value} - ${r.querySelector('.row-col-2').value} (${r.querySelector('.row-col-3').value}, ${r.querySelector('.row-col-4').value})`);
+      });
+      document.getElementById('pengalaman_kerja').value = kerjaArr.join(' | ');
+
+      let orgArr = [];
+      document.querySelectorAll('.org-row').forEach(r => {
+        orgArr.push(`${r.querySelector('.row-col-1').value} - ${r.querySelector('.row-col-2').value} (${r.querySelector('.row-col-3').value}, ${r.querySelector('.row-col-4').value})`);
+      });
+      document.getElementById('organisasi').value = orgArr.join(' | ');
+
+      let ketArr = [];
+      document.querySelectorAll('.ket-row').forEach(r => {
+        ketArr.push(`${r.querySelector('.row-col-1').value}: ${r.querySelector('.row-col-2').value} [${r.querySelector('.row-col-3').value} - ${r.querySelector('.row-col-4').value}]`);
+      });
+      document.getElementById('keterampilan').value = ketArr.join(' | ');
+
+      let olarArr = [];
+      document.querySelectorAll('.olahraga-row').forEach(r => {
+        olarArr.push(`${r.querySelector('.row-col-1').value} (${r.querySelector('.row-col-2').value})`);
+      });
+      document.getElementById('olahraga').value = olarArr.join(' | ');
+
+      let senArr = [];
+      document.querySelectorAll('.kesenian-row').forEach(r => {
+        senArr.push(`${r.querySelector('.row-col-1').value} (${r.querySelector('.row-col-2').value})`);
+      });
+      document.getElementById('kesenian').value = senArr.join(' | ');
+
+      let famArr = [];
+      document.querySelectorAll('.keluarga-row').forEach(r => {
+        famArr.push(`${r.querySelector('.fam-name').value}, ${r.querySelector('.fam-age').value} thn, ${r.querySelector('.fam-relation').value} (${r.querySelector('.fam-job').value})`);
+      });
+      document.getElementById('keluarga').value = famArr.join(' | ');
+
+      const form = document.getElementById('biodataForm');
+      const formData = new FormData(form);
+      
+      const btnSubmit = document.getElementById('btnSubmit');
+      const btnText = document.getElementById('btnText');
+      btnSubmit.disabled = true;
+      btnText.textContent = "Mengirim Data...";
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        btnSubmit.disabled = false;
+        btnText.textContent = "Kirim Data Biodata ke Google Sheets";
+        showModal('Berhasil!', 'Data formulir CPMI berhasil dikirim ke Google Sheets.', true);
+        form.reset();
+      })
+      .catch(err => {
+        btnSubmit.disabled = false;
+        btnText.textContent = "Kirim Data Biodata ke Google Sheets";
+        // Penanganan CORS fallback jika response block tapi data masuk
+        showModal('Informasi', 'Permintaan terkirim. Mohon cek Google Sheets Anda untuk memastikan data masuk.', true);
+      });
+    }
+
+    function showModal(title, msg, success) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalMessage').textContent = msg;
       const icon = document.getElementById('modalIcon');
-      if (isSuccess) {
+      if(success) {
         icon.className = "w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-xl font-bold";
-        icon.innerText = "✓";
+        icon.textContent = "✓";
       } else {
         icon.className = "w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center mx-auto text-xl font-bold";
-        icon.innerText = "!";
+        icon.textContent = "✕";
       }
       document.getElementById('customModal').classList.remove('hidden');
     }
@@ -481,117 +571,6 @@
     function closeModal() {
       document.getElementById('customModal').classList.add('hidden');
     }
-
-    async function handleFormSubmit(e) {
-      e.preventDefault();
-      
-      // Gabungkan baris-baris riwayat pendidikan
-      const pendRows = document.querySelectorAll('.pendidikan-row');
-      let pendArr = [];
-      pendRows.forEach(row => {
-        const name = row.querySelector('.school-name').value.trim();
-        const major = row.querySelector('.school-major').value.trim();
-        const loc = row.querySelector('.school-location').value.trim();
-        const period = row.querySelector('.school-period').value.trim();
-        const ket = row.querySelector('.school-ket').value.trim();
-        if(name) pendArr.push(`${name}/${major}/${loc}/${period}/${ket}`);
-      });
-      document.getElementById('riwayat_pendidikan').value = pendArr.join('\n');
-
-      // Helper untuk menggabungkan baris 4 kolom (Kursus, Kerja, Organisasi, Keterampilan, dll)
-      function processMultiCol(containerClass, hiddenInputId) {
-        const rows = document.querySelectorAll(`.${containerClass}`);
-        let arr = [];
-        rows.forEach(row => {
-          const c1 = row.querySelector('.row-col-1').value.trim();
-          const c2 = row.querySelector('.row-col-2').value.trim();
-          const c3 = row.querySelector('.row-col-3').value.trim();
-          const c4 = row.querySelector('.row-col-4').value.trim();
-          if(c1) arr.push(`${c1}/${c2}/${c3}/${c4}`);
-        });
-        document.getElementById(hiddenInputId).value = arr.join('\n');
-      }
-
-      processMultiCol('kursus-row', 'kursus');
-      processMultiCol('kerja-row', 'pengalaman_kerja');
-      processMultiCol('org-row', 'organisasi');
-      processMultiCol('ket-row', 'keterampilan');
-      processMultiCol('olahraga-row', 'olahraga');
-      processMultiCol('kesenian-row', 'kesenian');
-
-      // Gabungkan baris-baris keluarga
-      const famRows = document.querySelectorAll('.keluarga-row');
-      let famArr = [];
-      famRows.forEach((row, index) => {
-        const name = row.querySelector('.fam-name').value.trim();
-        const age = row.querySelector('.fam-age').value.trim();
-        const relation = row.querySelector('.fam-relation').value.trim();
-        const job = row.querySelector('.fam-job').value.trim();
-        if(name) famArr.push(`${index + 1}. ${name}/${age}/${relation}/${job}`);
-      });
-      document.getElementById('keluarga').value = famArr.join('\n');
-
-      const gsUrl = document.getElementById('gsUrlInput').value.trim();
-      
-      const formData = new FormData(e.target);
-      const dataObj = {};
-      formData.forEach((value, key) => {
-        dataObj[key] = value;
-      });
-
-      if (!gsUrl) {
-        const btn = document.getElementById('btnSubmit');
-        const btnText = document.getElementById('btnText');
-        const originalText = btnText.innerText;
-        
-        btn.disabled = true;
-        btnText.innerText = "Mengirim simulasi data...";
-        
-        setTimeout(() => {
-          btn.disabled = false;
-          btnText.innerText = originalText;
-          showModal(
-            "Simulasi Berhasil! (Mode Offline)", 
-            "Seluruh data berhasil disusun otomatis. Masukkan URL Apps Script Anda di atas untuk tes kirim online."
-          );
-        }, 1200);
-        return;
-      }
-
-      const btn = document.getElementById('btnSubmit');
-      const btnText = document.getElementById('btnText');
-      const originalText = btnText.innerText;
-
-      btn.disabled = true;
-      btnText.innerText = "Menyimpan ke Google Sheets...";
-
-      try {
-        const response = await fetch(gsUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(dataObj)
-        });
-
-        btn.disabled = false;
-        btnText.innerText = originalText;
-        showModal(
-          "Berhasil Terkirim!", 
-          "Data biodata CPMI berhasil dikirim ke Google Sheets."
-        );
-      } catch (error) {
-        btn.disabled = false;
-        btnText.innerText = originalText;
-        showModal(
-          "Gagal Mengirim", 
-          "Terjadi kesalahan koneksi: " + error.toString(), 
-          false
-        );
-      }
-    }
   </script>
-
 </body>
 </html>
