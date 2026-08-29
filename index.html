@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulir Pendaftaran & Biodata CPMI</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
@@ -17,10 +19,12 @@
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
 
+  <!-- NOTIFICATION BANNER -->
   <div class="bg-blue-600/90 text-white text-center py-2 px-4 text-xs font-medium sticky top-0 z-50 shadow-md">
     🚀 <strong>Formulir CPMI Online:</strong> Silakan lengkapi seluruh data diri Anda dengan benar dan jujur.
   </div>
 
+  <!-- HEADER -->
   <header class="gradient-header border-b border-slate-800 py-4 px-6 sticky top-9 z-40">
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
       <div class="flex items-center gap-3">
@@ -35,9 +39,11 @@
     </div>
   </header>
 
+  <!-- MAIN CONTAINER -->
   <main class="max-w-4xl mx-auto w-full px-4 py-6 flex-1">
     <form id="biodataForm" onsubmit="handleFormSubmit(event)" class="bg-slate-800/90 border border-slate-700/80 p-6 sm:p-8 rounded-2xl shadow-2xl space-y-6 backdrop-blur-sm">
       
+      <!-- INFORMASI UTAMA -->
       <div class="border-b border-slate-700 pb-4">
         <h2 class="text-lg font-bold text-blue-400">A. Informasi Umum</h2>
         <p class="text-xs text-slate-400">Identitas dasar dan waktu pemeriksaan</p>
@@ -104,6 +110,7 @@
         </div>
       </div>
 
+      <!-- SOSIAL MEDIA -->
       <div class="border-b border-slate-700 pt-4 pb-4">
         <h2 class="text-lg font-bold text-blue-400">B. Akun Sosial Media</h2>
         <p class="text-xs text-slate-400">Jika tidak punya, isikan tanda <code class="text-amber-400 font-bold">-</code></p>
@@ -136,12 +143,14 @@
         </div>
       </div>
 
+      <!-- RIWAYAT, KURSUS, DLL -->
       <div class="border-b border-slate-700 pt-4 pb-4">
         <h2 class="text-lg font-bold text-blue-400">C. Riwayat, Keahlian & Minat</h2>
         <p class="text-xs text-slate-400">Gunakan form interaktif di bawah untuk mengisi data secara terstruktur.</p>
       </div>
 
       <div class="space-y-6">
+        <!-- RIWAYAT PENDIDIKAN DINAMIS -->
         <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
           <div class="flex justify-between items-center">
             <div>
@@ -165,6 +174,7 @@
           <input type="hidden" id="riwayat_pendidikan" name="riwayat_pendidikan">
         </div>
 
+        <!-- KURSUS / PELATIHAN DINAMIS -->
         <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
           <div class="flex justify-between items-center">
             <div>
@@ -187,6 +197,7 @@
           <input type="hidden" id="kursus" name="kursus">
         </div>
 
+        <!-- PENGALAMAN KERJA DINAMIS -->
         <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
           <div class="flex justify-between items-center">
             <div>
@@ -209,6 +220,7 @@
           <input type="hidden" id="pengalaman_kerja" name="pengalaman_kerja">
         </div>
 
+        <!-- KEGIATAN ORGANISASI DINAMIS -->
         <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
           <div class="flex justify-between items-center">
             <div>
@@ -231,6 +243,7 @@
           <input type="hidden" id="organisasi" name="organisasi">
         </div>
 
+        <!-- KETERAMPILAN KHUSUS DINAMIS -->
         <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
           <div class="flex justify-between items-center">
             <div>
@@ -253,6 +266,7 @@
           <input type="hidden" id="keterampilan" name="keterampilan">
         </div>
 
+        <!-- OLAHRAGA DINAMIS -->
         <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
           <div class="flex justify-between items-center">
             <div>
@@ -273,6 +287,7 @@
           <input type="hidden" id="olahraga" name="olahraga">
         </div>
 
+        <!-- KESENIAN DINAMIS -->
         <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
           <div class="flex justify-between items-center">
             <div>
@@ -298,3 +313,271 @@
           <input type="text" name="cita_cita" required placeholder="Cita-cita Anda" class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:outline-none">
         </div>
       </div>
+
+      <!-- KELUARGA & KESEHATAN -->
+      <div class="border-b border-slate-700 pt-4 pb-4">
+        <h2 class="text-lg font-bold text-blue-400">D. Keluarga & Riwayat Kesehatan</h2>
+        <p class="text-xs text-slate-400">Isikan anggota keluarga sesuai kartu keluarga (KK).</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- ANGGOTA KELUARGA DINAMIS -->
+        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/60 space-y-3">
+          <div class="flex justify-between items-center">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Daftar Keluarga (Sesuai KK)</label>
+              <p class="text-[11px] text-slate-400">Tambah anggota keluarga satu per satu</p>
+            </div>
+            <button type="button" onclick="addKeluargaRow()" class="px-3 py-1.5 bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 text-xs font-bold rounded-lg border border-blue-500/40 transition-all cursor-pointer flex items-center gap-1">
+              + Tambah Anggota
+            </button>
+          </div>
+          <div id="keluargaContainer" class="space-y-3">
+            <div class="keluarga-row grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center">
+              <input type="text" placeholder="Nama Lengkap" class="col-span-1 sm:col-span-4 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-name" required>
+              <input type="number" placeholder="Umur" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-age" required>
+              <input type="text" placeholder="Hubungan (Ayah/Ibu/Anak)" class="col-span-1 sm:col-span-3 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-relation" required>
+              <input type="text" placeholder="Pekerjaan" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-job" required>
+              <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
+            </div>
+          </div>
+          <input type="hidden" id="keluarga" name="keluarga">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider">Pernahkah Saudara Sakit Keras?</label>
+          <input type="text" name="sakit_keras" value="Tidak/-/-/-" class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700 rounded-xl text-white text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider">Pernahkah Mengalami Kecelakaan Berat?</label>
+          <input type="text" name="kecelakaan" value="Tidak/-/-/-" class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700 rounded-xl text-white text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider">Pernahkah Mengikuti Psikotes?</label>
+          <input type="text" name="pernah_psikotes" value="Tidak/-/-/-" class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700 rounded-xl text-white text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+      </div>
+
+      <!-- ESAI -->
+      <div class="border-b border-slate-700 pt-4 pb-4">
+        <h2 class="text-lg font-bold text-blue-400">E. Esai / Refleksi Peristiwa Penting</h2>
+        <p class="text-xs text-slate-400">Ceritakan sebuah peristiwa atau pengalaman penting yang pernah Anda alami.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider">Ceritakan Peristiwanya</label>
+          <textarea name="esai_1" rows="4" placeholder="Tuliskan pengalaman atau peristiwa penting..." class="w-full px-4 py-3 bg-slate-900/80 border border-slate-700 rounded-xl text-white text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+        </div>
+      </div>
+
+      <!-- TOMBOL SUBMIT -->
+      <div class="pt-4">
+        <button type="submit" id="btnSubmit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-600/25 flex items-center justify-center gap-2 cursor-pointer">
+          <span id="btnText">Kirim Data Biodata ke Google Sheets</span>
+          <span id="btnArrow">&rarr;</span>
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- CUSTOM MODAL PESAN -->
+  <div id="customModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-800 border border-slate-700 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl text-center">
+      <div id="modalIcon" class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+      <h3 id="modalTitle" class="text-lg font-bold text-white">Status Pengiriman</h3>
+      <p id="modalMessage" class="text-xs text-slate-300 leading-relaxed">Pesan status akan muncul di sini.</p>
+      <button onclick="closeModal()" class="w-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold py-3 rounded-xl transition-all cursor-pointer">Tutup & Kembali</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-center text-xs text-slate-500 border-t border-slate-800/80">
+    <p>&copy; 2026 Psychology Evaluation Platform &bull; CPMI Online Engine</p>
+  </footer>
+
+  <!-- JAVASCRIPT LENGKAP -->
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyHIwQsp0aIJseR5clCyFHpeL60Iwd6i3is7GdGANoW_PSihZonDe_3P5CkdlKvZ0U7/exec";
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      // Kompilasi Pendidikan
+      let pendidikanArr = [];
+      document.querySelectorAll('.pendidikan-row').forEach(row => {
+        let name = row.querySelector('.school-name').value;
+        let major = row.querySelector('.school-major').value;
+        let loc = row.querySelector('.school-location').value;
+        let period = row.querySelector('.school-period').value;
+        let ket = row.querySelector('.school-ket').value;
+        pendidikanArr.push(`[${period}] ${name} - ${major} (${loc}) - ${ket}`);
+      });
+      document.getElementById('riwayat_pendidikan').value = pendidikanArr.join(" | ");
+
+      // Kompilasi Kursus
+      let kursusArr = [];
+      document.querySelectorAll('.kursus-row').forEach(row => {
+        kursusArr.push(`${row.querySelector('.row-col-1').value} - ${row.querySelector('.row-col-2').value} (${row.querySelector('.row-col-3').value}, ${row.querySelector('.row-col-4').value})`);
+      });
+      document.getElementById('kursus').value = kursusArr.join(" | ");
+
+      // Kompilasi Pengalaman Kerja
+      let kerjaArr = [];
+      document.querySelectorAll('.kerja-row').forEach(row => {
+        kerjaArr.push(`${row.querySelector('.row-col-1').value} as ${row.querySelector('.row-col-2').value} (${row.querySelector('.row-col-3').value}, ${row.querySelector('.row-col-4').value})`);
+      });
+      document.getElementById('pengalaman_kerja').value = kerjaArr.join(" | ");
+
+      // Kompilasi Organisasi
+      let orgArr = [];
+      document.querySelectorAll('.org-row').forEach(row => {
+        orgArr.push(`${row.querySelector('.row-col-1').value} as ${row.querySelector('.row-col-2').value} (${row.querySelector('.row-col-3').value}, ${row.querySelector('.row-col-4').value})`);
+      });
+      document.getElementById('organisasi').value = orgArr.join(" | ");
+
+      // Kompilasi Keterampilan
+      let ketArr = [];
+      document.querySelectorAll('.ket-row').forEach(row => {
+        ketArr.push(`${row.querySelector('.row-col-1').value}: ${row.querySelector('.row-col-2').value} [${row.querySelector('.row-col-3').value}] (${row.querySelector('.row-col-4').value})`);
+      });
+      document.getElementById('keterampilan').value = ketArr.join(" | ");
+
+      // Kompilasi Olahraga
+      let olrArr = [];
+      document.querySelectorAll('.olahraga-row').forEach(row => {
+        olrArr.push(`${row.querySelector('.row-col-1').value} (${row.querySelector('.row-col-2').value})`);
+      });
+      document.getElementById('olahraga').value = olrArr.join(" | ");
+
+      // Kompilasi Kesenian
+      let kesArr = [];
+      document.querySelectorAll('.kesenian-row').forEach(row => {
+        kesArr.push(`${row.querySelector('.row-col-1').value} (${row.querySelector('.row-col-2').value})`);
+      });
+      document.getElementById('kesenian').value = kesArr.join(" | ");
+
+      // Kompilasi Keluarga
+      let famArr = [];
+      document.querySelectorAll('.keluarga-row').forEach(row => {
+        famArr.push(`${row.querySelector('.fam-name').value}, ${row.querySelector('.fam-age').value}th - ${row.querySelector('.fam-relation').value} (${row.querySelector('.fam-job').value})`);
+      });
+      document.getElementById('keluarga').value = famArr.join(" | ");
+
+      // Ambil seluruh data form
+      const form = document.getElementById('biodataForm');
+      const formData = new FormData(form);
+      const dataObj = {};
+      formData.forEach((value, key) => {
+          dataObj[key] = value;
+      });
+
+      // Ubah status tombol
+      const btnSubmit = document.getElementById('btnSubmit');
+      const btnText = document.getElementById('btnText');
+      btnText.innerText = "Sedang Mengirim Data...";
+      btnSubmit.disabled = true;
+
+      // Kirim data menggunakan mode no-cors
+      fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(dataObj)
+      })
+      .then(() => {
+          showModal("Berhasil!", "Data biodata CPMI berhasil dikirim dan email notifikasi telah diproses.", "success");
+          form.reset();
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          showModal("Gagal!", "Terjadi kesalahan saat mengirim data. Silakan coba lagi.", "error");
+      })
+      .finally(() => {
+          btnText.innerText = "Kirim Data Biodata ke Google Sheets";
+          btnSubmit.disabled = false;
+      });
+    }
+
+    function showModal(title, message, type) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalMessage').innerText = message;
+      document.getElementById('modalIcon').innerText = type === 'success' ? '✓' : '✕';
+      document.getElementById('customModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('customModal').classList.add('hidden');
+    }
+
+    function removeRow(btn) {
+      const row = btn.closest('div.grid');
+      if (row.parentElement.children.length > 1) {
+        row.remove();
+      } else {
+        alert("Minimal harus menyisakan 1 baris.");
+      }
+    }
+
+    function addPendidikanRow() {
+      const container = document.getElementById('pendidikanContainer');
+      const row = document.createElement('div');
+      row.className = "pendidikan-row grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center";
+      row.innerHTML = `
+        <input type="text" placeholder="Nama Sekolah" class="col-span-1 sm:col-span-3 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white school-name" required>
+        <input type="text" placeholder="Jurusan" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white school-major" value="-" required>
+        <input type="text" placeholder="Lokasi" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white school-location" required>
+        <input type="text" placeholder="Periode" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white school-period" required>
+        <input type="text" placeholder="Ket" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white school-ket" value="lulus" required>
+        <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
+      `;
+      container.appendChild(row);
+    }
+
+    function addDynamicRow(containerId, rowClass, placeholders) {
+      const container = document.getElementById(containerId);
+      const div = document.createElement('div');
+      div.className = `${rowClass} grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center`;
+      div.innerHTML = `
+        <input type="text" placeholder="${placeholders[0]}" class="col-span-1 sm:col-span-4 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-1" required>
+        <input type="text" placeholder="${placeholders[1]}" class="col-span-1 sm:col-span-3 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-2" required>
+        <input type="text" placeholder="${placeholders[2]}" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-3" required>
+        <input type="text" placeholder="${placeholders[3]}" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-4" required>
+        <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
+      `;
+      container.appendChild(div);
+    }
+
+    function addSimpleRow(containerId, rowClass, p1, p2) {
+      const container = document.getElementById(containerId);
+      const div = document.createElement('div');
+      div.className = `${rowClass} grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center`;
+      div.innerHTML = `
+        <input type="text" placeholder="${p1}" class="col-span-1 sm:col-span-6 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-1" required>
+        <input type="text" placeholder="${p2}" class="col-span-1 sm:col-span-5 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white row-col-2" required>
+        <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
+      `;
+      container.appendChild(div);
+    }
+
+    function addKeluargaRow() {
+      const container = document.getElementById('keluargaContainer');
+      const div = document.createElement('div');
+      div.className = "keluarga-row grid grid-cols-1 sm:grid-cols-12 gap-2 bg-slate-800/80 p-3 rounded-lg border border-slate-700 items-center";
+      div.innerHTML = `
+        <input type="text" placeholder="Nama Lengkap" class="col-span-1 sm:col-span-4 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-name" required>
+        <input type="number" placeholder="Umur" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-age" required>
+        <input type="text" placeholder="Hubungan" class="col-span-1 sm:col-span-3 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-relation" required>
+        <input type="text" placeholder="Pekerjaan" class="col-span-1 sm:col-span-2 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white fam-job" required>
+        <button type="button" onclick="removeRow(this)" class="col-span-1 sm:col-span-1 text-rose-400 hover:text-rose-300 p-2 text-center text-xs font-bold transition-all cursor-pointer">✕</button>
+      `;
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>
